@@ -52,8 +52,8 @@ class Code
   end
 
   def num_near_matches(code)
-    c = code.pegs
-    b = @pegs
+    c = code.pegs.dup
+    b = @pegs.dup
     count = 0
     c.each_with_index do |ele, i1|
         b.each_with_index do |peg, i2|

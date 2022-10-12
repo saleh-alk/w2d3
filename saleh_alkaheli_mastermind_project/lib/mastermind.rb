@@ -16,7 +16,11 @@ class Mastermind
         guess = gets.chomp
         g = Code.from_string(guess)
         print_matches(g)
-        g.pegs == @secret_code
+        if g.pegs == @secret_code.pegs
+            return true
+        else
+            return false
+        end
 
     end
 
