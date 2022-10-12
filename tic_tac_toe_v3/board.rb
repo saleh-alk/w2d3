@@ -26,7 +26,6 @@ class Board
     def place_mark(pos, mark)
         if valid?(pos)== true && empty?(pos) == true
             @grid[pos[0]][pos[1]] = mark
-            true
         else
             raise 'error'
         end
@@ -94,7 +93,7 @@ class Board
         @grid.each_with_index do |ele, i1|
             ele.each_with_index do |ele2, i2|
                 if @grid[i1][i2] == '_'
-                    arr << [i1-1, i2-1]
+                    arr << [i1, i2]
                 end
             end
         end

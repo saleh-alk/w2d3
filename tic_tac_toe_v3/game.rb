@@ -27,9 +27,8 @@ class Game
     def play
         while @board.empty_positions?
             @board.grid_print
-            k = @board.legal_positions.sample
+            k = @board.legal_positions
             d = @current_player.get_position(k)
-
 
             @board.place_mark(d, @current_player.mark_val)
             if @board.win?(@current_player.mark_val)
